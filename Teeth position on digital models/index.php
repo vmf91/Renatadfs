@@ -21,6 +21,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	    echo "Sorry, your file was not uploaded.";
 	// if everything is ok, try to upload file
 	} else {
+		// Remove previous files
+		if(file_exists($target_file)){
+			unlink($target_file);
+		}
+		if(file_exists('uploads/out.csv')){
+			unlink('uploads/out.csv');
+		}
+		
 	    if (move_uploaded_file($_FILES["dataset"]["tmp_name"], $target_file)) {
 	        echo "The file ". basename( $_FILES["dataset"]["name"]). " has been uploaded.";
 
