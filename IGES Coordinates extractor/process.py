@@ -25,4 +25,4 @@ for c in range(0, len(coords) - 2, 3):
 
 df_ = pd.DataFrame(coord_arr, columns=columns)
 df_.index = df_.index + 1
-df_.to_csv('uploads/out.csv', sep=',', encoding='utf-8')
+df_.to_csv('uploads/out.csv', sep=';', encoding='utf-8')

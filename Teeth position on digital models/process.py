@@ -89,4 +89,4 @@ dataset[str('rotacao')] = col_rotacao
 dataset[str('angulacao')] = col_angulacao
 dataset[str('torque')] = col_torque
 
-dataset.to_csv('uploads/out.csv', sep=',', encoding='utf-8')
+dataset.to_csv('uploads/out.csv', sep=';', encoding='utf-8')
