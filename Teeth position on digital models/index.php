@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	    if (move_uploaded_file($_FILES["dataset"]["tmp_name"], $target_file)) {
 	        echo "The file ". basename( $_FILES["dataset"]["name"]). " has been uploaded.";
 
-	        exec('python process.py');
+	        exec('python3 process.py');
 			sleep(1);
 			header("Location: uploads/out.csv"); /* Redirect browser */
 			exit();
