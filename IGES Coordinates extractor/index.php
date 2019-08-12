@@ -53,5 +53,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		<input type="file" name="dataset" accept=".igs,.iges" />
 		<button type="submit">Submit</button>
 	</form>
+	<embed src="../instructions.pdf" style="position:absolute;top:0px;right:0px;width:calc(100% - 400px);height:100%" type="application/pdf">
 </body>
 </html>

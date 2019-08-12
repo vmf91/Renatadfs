@@ -54,5 +54,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	</form>
 
 	<p><a href="template.csv">Click here</a> to download a template</p>
+	<embed src="../instructions.pdf" style="position:absolute;top:0px;right:0px;width:calc(100% - 400px);height:100%" type="application/pdf">
 </body>
 </html>
