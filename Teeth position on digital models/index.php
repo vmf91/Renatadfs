@@ -37,11 +37,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			sleep(1);
 			if(file_exists('uploads/out.csv')){
 				header("Location: uploads/out.csv"); /* Redirect browser */
+				exit();
 			}else{
 				echo "Sorry, there was an error processing your file.";
 			}
-			
-			exit();
 		} else {
 			echo "Sorry, there was an error uploading your file.";
 		}
