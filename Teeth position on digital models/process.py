@@ -15,7 +15,7 @@ def rotate(origin, point, angle):
 
 
 def loadData(fileName, fields):
-	return pd.read_csv(fileName, delimiter=';', skipinitialspace=True, usecols=fields)
+	return pd.read_csv(fileName, delimiter=';', thousands=',', skipinitialspace=True, usecols=fields)
 
 fields_in  = ['x','y','z']
 fields_out = ['l_x','l_y','l_z','m_x','m_y','m_z','d_x','d_y','d_z','a_x','a_y','a_z','b_x','b_y','b_z']
