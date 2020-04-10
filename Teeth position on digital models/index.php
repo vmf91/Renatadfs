@@ -25,20 +25,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		if(file_exists($target_file)){
 			unlink($target_file);
 		}
+
 		if(file_exists('uploads/out.csv')){
 			unlink('uploads/out.csv');
 		}
 		
-	    if (move_uploaded_file($_FILES["dataset"]["tmp_name"], $target_file)) {
-	        echo "The file ". basename( $_FILES["dataset"]["name"]). " has been uploaded.";
+		if (move_uploaded_file($_FILES["dataset"]["tmp_name"], $target_file)) {
+			echo "The file ". basename( $_FILES["dataset"]["name"]). " has been uploaded.";
 
-	        exec('python3 process.py');
+			exec('python3 process.py');
 			sleep(1);
-			header("Location: uploads/out.csv"); /* Redirect browser */
+			if(file_exists('uploads/out.csv')){
+				header("Location: uploads/out.csv"); /* Redirect browser */
+			}else{
+				echo "Sorry, there was an error processing your file.";
+			}
+			
 			exit();
-	    } else {
-	        echo "Sorry, there was an error uploading your file.";
-	    }
+		} else {
+			echo "Sorry, there was an error uploading your file.";
+		}
 	}
 }
 ?>
